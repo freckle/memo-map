@@ -1,0 +1,72 @@
+name: memo-map
+version: 0.0.0.0
+maintainer: Freckle Education
+category: Memoization
+github: freckle/memo-map
+synopsis: Memoization in a Map
+description: |
+  Utility for memoizing an effectful function (e.g. database query) using a Map.
+
+extra-doc-files:
+  - README.md
+  - CHANGELOG.md
+
+extra-source-files:
+  - package.yaml
+
+ghc-options:
+  - -fwrite-ide-info
+  - -Weverything
+  - -Wno-all-missed-specialisations
+  - -Wno-missed-specialisations
+  - -Wno-missing-exported-signatures # re-enables missing-signatures
+  - -Wno-missing-import-lists
+  - -Wno-missing-local-signatures
+  - -Wno-monomorphism-restriction
+  - -Wno-safe
+  - -Wno-unsafe
+  - -Wno-missing-kind-signatures
+  - -Wno-missing-safe-haskell-mode
+  - -Wno-prepositive-qualified-module
+
+when:
+  - condition: "impl(ghc >= 9.8)"
+    ghc-options:
+      - -Wno-missing-role-annotations
+      - -Wno-missing-poly-kind-signatures
+
+dependencies:
+  - base < 5
+
+language: GHC2021
+
+default-extensions:
+  - BangPatterns
+  - DataKinds
+  - DerivingStrategies
+  - GADTs
+  - GeneralizedNewtypeDeriving
+  - LambdaCase
+  - MultiParamTypeClasses
+  - NoFieldSelectors
+  - NoImplicitPrelude
+  - NoMonomorphismRestriction
+  - OverloadedRecordDot
+  - OverloadedStrings
+  - StandaloneDeriving
+  - TypeApplications
+  - TypeFamilies
+
+library:
+  source-dirs: src
+  dependencies:
+    - containers
+    - unliftio
+
+tests:
+  readme:
+    main: README.lhs
+    ghc-options: -pgmL markdown-unlit
+    dependencies:
+      - memo-map
+      - markdown-unlit
