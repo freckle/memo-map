@@ -69,4 +69,5 @@ tests:
     ghc-options: -pgmL markdown-unlit
     dependencies:
       - memo-map
+    build-tools:
       - markdown-unlit

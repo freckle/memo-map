@@ -9,7 +9,6 @@ Utility for memoizing an effectful function (e.g. database query) using a map.
 module Main (main) where
 
 import Prelude
-import Text.Markdown.Unlit ()
 ```
 -->
 
