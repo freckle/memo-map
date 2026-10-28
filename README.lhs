@@ -1,5 +1,8 @@
 # memo-map
 
+ > [!WARNING]
+ > This repository is archived and no longer maintained.
+
 Utility for memoizing an effectful function (e.g. database query) using a map.
 
 ## Example
